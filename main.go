@@ -22,6 +22,7 @@ type Message struct {
 type ReturnMessage struct {
 	LangCode string `json:"langcode"`
 	LangSure string `json:"langsure"`
+	LangRahul string `json:"langrahul"`
 }
 
 const (
@@ -83,6 +84,8 @@ func GreetingHandler(w http.ResponseWriter, r *http.Request) {
 
 	output.LangCode = info.LanguageCode()
 	output.LangSure = fmt.Sprintf("%f", info.Confidence())
+	output.LangRahul = "Rahul was here"
+
 
 	//output.Greeting = fmt.Sprintf("Welcome to Direktiv, %s!", greeter.Name)
 
